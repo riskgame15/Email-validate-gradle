@@ -20,7 +20,7 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String home() {
-        return "home";
+        return "index";
     }
 
     @PostMapping(value = "/validate")
@@ -28,7 +28,7 @@ public class HomeController {
         boolean isValid = this.validate(email);
         if (!isValid) {
             modelMap.addAttribute("message", "Email is invalid");
-            return "home";
+            return "index";
         }
         modelMap.addAttribute("email", email);
         return "success";
